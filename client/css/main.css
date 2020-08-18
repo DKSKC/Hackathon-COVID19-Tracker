@@ -1,4 +1,28 @@
+:root {
+  --white: #f9f9f9;
+  --black: #0f0f0f;
+}
+
 body {
-  margin-right: 10%;
-  margin-left: 10%;
+  background-color: var(--white);
+}
+section {
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.jumbo-slot {
+  height: 400px;
+  background-image: url("community.jpg");
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -100;
+}
+
+.bg-black {
+  background-color: black;
+}
+.bg-dgrey {
+  background-color: #212121;
 }
