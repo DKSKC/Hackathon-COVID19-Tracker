@@ -1,0 +1,175 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9f9f9;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  padding-top: 1px;
+  background-color: #fff;
+}
+.icon {
+  margin:  20px auto;
+  max-width: 39px;
+  max-height: 39px;
+}
+.icon > img,
+.icon > a {
+  width: 100%;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+li {
+  display: inline-block;
+  margin: auto 10px;
+}
+a {
+  font-size: 20px;
+  font-family: "Karla";
+  color: #003049;
+}
+a:hover {
+  text-decoration: none;
+}
+.custom-border {
+  width: auto;
+  height: 5px;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  background-color: black;
+}
+button {
+  font-size: 20px;
+  outline: none !important;
+  border: none;
+  background-color: transparent;
+}
+.blur {
+  opacity: 0.6;
+}
+.sidepanel-in {
+  width: 420px !important;
+}
+.sidepanel  {
+  width: 0;
+  height: 100vh;
+  padding-top: 60px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.sidepanel > * {
+  padding-left: 60px;
+}
+.sidepanel > :nth-child(1) {
+  float: right;
+  margin-right: 25px;
+}
+.sidepanel > :nth-child(1) > :nth-child(1) {
+  font-size: 60px;
+}
+.sidepanel ul {
+  text-align: left;
+}
+.sidepanel li {
+  width: 80%;
+  margin: auto;
+}
+.sidepanel li:nth-child(2) {
+  margin-top: 40px;
+}
+.sidepanel li:nth-child(5) {
+  margin-top: 40px;
+}
+.sidepanel a {
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  padding: 7px;
+}
+.sidepanel a.active {
+  border: 1px solid #003049;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #003049;
+}
+.end-line {
+  width: 75%;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  margin: 40px auto;
+  background-color: #003049;
+} 
+.footer {
+  margin-top: 200px;
+  background-color: #1D1C1C;
+}
+.footer div:nth-child(1){
+    display: flex;
+    justify-content: center;
+}
+.footer .icon {
+  margin: 20px 10px;
+}
+.icon-group > div {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+.icon-group div:nth-child(1){
+  background-image: url(res/facebook.svg);
+}
+.icon-group div:nth-child(2){
+  background-image: url(res/github.svg);
+}
+@media screen and (max-width: 1200px) {
+  .header {
+    padding-bottom: 1px;
+  }
+  .header div:nth-child(1){
+    display: flex;
+    justify-content: center;
+  }
+  .icon + ul > *:not(:last-child){
+    display: none;
+  }
+  .icon + ul {
+    margin: 20px 10px;
+    position: absolute;
+    right: 100px;
+  }
+  .icon {
+    margin: 20px 0;
+  }
+  .icon-group > div {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 800px){
+  .icon-group > div {
+    width: 25x;
+    height: 25px;
+  }
+}
