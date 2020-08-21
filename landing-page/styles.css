@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@font-face{
+  src: url(BARABARAFINALRegular.ttf);
+  font-family: barabara;
+}
+/*@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');*/
+
 /*Global styles*/
 *,
 *::before,
@@ -9,11 +15,11 @@
 }
 
 :root{
-    --main-font: 'Rubik', sans-serif;
-    --secondary-font: 'Karla', sans-serif;
+    --main-font: 'Barabara', sans-serif;
+    --secondary-font: 'Alata', sans-serif;
     --body-font: 'Cabin', sans-serif;
     --main-font-color-dark: #252525;
-    --secondary-font-color: #c59d5f;
+    --secondary-font-color: #eccec4;
     --body-font-color: #515151;
 }
 
@@ -24,8 +30,13 @@ html{
   scroll-behavior: smooth;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 section{
   padding: 3.9rem 0;
+  overflow: hidden;
 }
 
 img{
@@ -55,7 +66,8 @@ header{
   top: 0;
   left: 0;
   z-index: 1;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+  /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);*/
+  background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
 
 .nav{
@@ -152,15 +164,466 @@ header{
 .hero{
   width: 100%;
   height: 100vh;
-  /* background: url("") center no-repeat;  insert image here*/
-  background-size: cover;
+  background: url("assets/hero2.jpg") right no-repeat;
+  background-size: auto;
   display: flex;
   align-items: center;
+  text-align: center; /*change to center if no hero background is good*/
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+}
+
+/*welcome*/
+.sub-headline{
+  font-size: 8.3rem;
+  font-family: var(--secondary-font);
+  color: var(--secondary-font-color);
+  font-weight: 100;
+  line-height: .7;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp .5s forwards;
+  animation-delay: .5s;
+}
+
+.first-letter{
+  text-transform: uppercase;
+  font-size: 10.3rem;
+}
+/*kabayan*/
+.headline{
+  color: black;
+  font-size: 3.7rem;
+  font-family: var(--main-font);
+  font-weight: 900;
+  letter-spacing: .5rem;
+  margin-right: -.5rem;
+  animation: scale .5s forwards;
+}
+
+.separator{
+  display: flex;
+  align-items: center; /*change to center if no bg hero is good*/
+  justify-content: center; /*change to center if no bg hero is good*/
+}
+
+/*line*/
+.line{
+  width: 100%;
+  max-width: 8.5rem;
+  height: .25rem;
+  background-color: black;
+  position: relative;
+  animation: grow 2s forwards;
+  animation-delay: .9s;
+  opacity: 0;
+}
+
+.line-right::before, .line-left::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: .5rem solid transparent;
+  animation: grow .5s forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+.line-right::before{
+  border-right-color: black;
+  right: 0;
+}
+
+.line-left::before{
+  border-left-color: black;
+  left: 0;
+}
+
+/*asterisk*/
+.asterisk{
+  font-size: 1.2rem;
+  color: var(--secondary-font-color);
+  margin: 0 1.6rem;
+  animation: spin .5s forwards;
+  animation-delay: .7s;
+}
+
+.single-animation{
+  animation: fadeDown .5s forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+/*transparency is the key*/
+.headline-description h5{
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+}
+
+.btn{
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+}
+
+.cta-btn{
+  font-size: 1.5rem;
+  background-color: #fff;
+  padding: .9rem 1.8rem;
+  color: var(--body-font-color);
+  border-radius: .4rem;
+  transition: background-color .5s;
+}
+
+.cta-btn:hover, .cta-btn:focus{
+  color: #fff;
+  background-color: var(--secondary-font-color);
+}
+
+/*Discover kabayan*/
+.global-headline{
+  text-align: center;
+  margin-top: 3.9rem;
+}
+
+.learn-more-about-kabayan .global-headline{
+  margin-top: 6.9rem;
+}
+
+.global-headline .asterisk{
+  color: var(--body-font-color);
+  margin-top:2.4rem 0;
+}
+
+.headine-dark{
+  color: var(--main-font-color-black);
+  letter-spacing: .7rem;
+  margin-right: -.7rem;
+}
+
+/*subheadline*/
+.global-headline .sub-headline{
+  letter-spacing: -1px;
+  line-height: .42;
+}
+
+.kabayan-info{
   text-align: center;
 }
 
-.sub-headline{
-  font-size: 8.5rem;
-  font-family: var(--secondary-font-color);
+.kabayan-description{
+  margin-bottom: 3rem;
+}
 
+.kabayan-description p{
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+
+}
+
+.body-btn{
+  font-size: 1.5rem;
+  color: var(--secondary-font-color);
+  position: relative;
+  transition: color .5s;
+}
+
+.body-btn::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-font-color);
+  transition: background-color .5s;
+}
+
+.body-btn:hover, .body-btn:focus{
+  color:var(--main-font-color-dark);
+}
+
+.body-btn:hover::before, .body-btn:focus::before{
+  background-color: var(--main-font-color-dark);
+}
+
+/*see the kaban*/
+.kaban{
+
+  background: url("assets/khero3.jpg") center no-repeat;
+  /*<a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a>*/
+  background-size: cover;
+
+}
+
+.between{
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+/*kabayan extra*/
+.image-group{
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-gap: 1.5rem;
+}
+
+.kabayan-extra, .kabayan-description{
+  padding-top: 3rem;
+  margin-bottom: 0;
+
+}
+
+/*Footer*/
+footer{
+  padding: 7rem 0;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.back-to-top{
+  width: 7rem;
+  height: 7rem;
+  background-color: #121212;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.back-to-top i{
+  display: block;
+  color:#fff;
+  font-size: 2rem;
+  padding: 2rem;
+  animation: up 2s infinite;
+}
+
+.footer-content{
+  overflow: hidden;
+}
+
+.footer-content h4{
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 5rem;
+}
+
+.footer-content .asterisk{
+  margin: 2.4rem 0;
+}
+
+.footer-content-about{
+  margin-bottom: 5.4rem;
+}
+
+.footer-content-about p{
+  line-height: 2;
+}
+
+.newsletter-form{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-input{
+  width: 100%;
+  max-width: 25rem;
+  padding: 1rem;
+  border-radius: .4rem;
+
+}
+
+.newsletter-btn{
+  background-color: transparent;
+  border: none;
+  color: var(--main-font-color-dark);
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 1px .6rem;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  margin-left: 10.5rem;
+}
+
+/*Media queries*/
+@media screen and (min-width: 900px){
+  section{
+    padding: 7.9rem;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  .nav{
+    justify-content: space-between;
+  }
+
+  .nav-list{
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    padding: 0;
+    justify-content: initial;
+    flex-direction: row;
+    transform: initial;
+    transition: initial;
+  }
+
+  .nav-item{
+    margin: 0 2.4rem;
+    border: none;
+  }
+
+  .nav-item:last-child{
+    margin-right: 0;
+  }
+
+  .nav-link{
+    font-size: 1.3rem;
+  }
+
+  .active{
+    position: relative;
+  }
+
+  .active::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    left:0;
+    bottom: -3px;
+  }
+
+  .sub-headline{
+    font-size: 10rem;
+  }
+
+  .first-letter{
+    font-size: 12.2rem;
+  }
+
+  .headline{
+    font-size:4.7rem;
+    letter-spacing: .8rem;
+  }
+
+  .line{
+    max-width: 19rem;
+  }
+
+  .kabayan-info{
+    display: flex;
+    align-items: center;
+  }
+
+  .kabayan-info > div{
+    flex: 1;
+  }
+
+  .padding-right{
+    padding-right: 7rem;
+  }
+
+  .footer-content{
+    max-width: 75rem;
+    margin: auto;
+  }
+
+  .footer-content-about{
+    max-width: 51.3rem;
+    margin: 0 auto 5.4rem;
+  }
+}
+
+/*animeyshons*/
+@keyframes fadeUp {
+  0%{
+    transform: translateY(4rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-1rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes scale {
+  0%{
+    transform: scale(2);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0%{
+    width: 0;
+  }
+
+  100%{
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+
+  100%{
+    opacity: 1;
+      transform: rotate(-360deg);
+  }
+}
+
+@keyframes up {
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
 }
